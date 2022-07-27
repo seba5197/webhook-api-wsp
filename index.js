@@ -107,7 +107,7 @@ try {
   
 
     let nom = req.body.entry[0].changes[0].value.contacts[0].profile.name
-    let num = req.body.entry[0].changes[0].value
+    let num = req.body.entry[0].changes[0].value.phone_number_id
     console.log("sssssssssssssss"+JSON.stringify(num))
     //console.log(ruta+" entra ------------------->"+ nom +" selecciono "+payload)
     let data ={
