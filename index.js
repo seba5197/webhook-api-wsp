@@ -105,8 +105,8 @@ try {
   if(payload){
     const payload  = req.body.entry[0].changes[0].value.messages[0].button.payload
  
-    const nombre = req.body.entry[0].changes[0].value.contacts[0].profile.name
-    const numero = req.body.entry[0].changes[0].value.metadata.display_phone_number;
+    let nom = req.body.entry[0].changes[0].value.contacts[0].profile.name
+    let num = req.body.entry[0].changes[0].value;
 
     console.log(numero+" entra ------------------->"+ nombre +" selecciono "+payload)
     let data ={
@@ -116,7 +116,7 @@ try {
       "to": "56945407148",
       "type": "text",
       "text": {
-          "body": "mensaje de "+  nombre +" Numero: "+numero+ "\n Selecciono "+ payload 
+          "body": "mensaje de "+  nom +" Numero: "+num+ "\n Selecciono "+ payload 
       }
     }
     let data1 ={
@@ -166,8 +166,8 @@ try {
 app.post('/prueba/:num/:nombre', function(req, res) {
 
  let num= req.params.num
- let nombre= req.params.nombre
- console.log("envia mensaje a "+nombre)
+ let nom= req.params.nombre
+ console.log("envia mensaje a "+nombre);
 
  let data3={
   "messaging_product": "whatsapp",
@@ -191,8 +191,6 @@ app.post('/prueba/:num/:nombre', function(req, res) {
           
         }
       }
-
- 
     ]
 
     },
@@ -201,7 +199,7 @@ app.post('/prueba/:num/:nombre', function(req, res) {
       "parameters": [
         {
           "type": "text",
-          "text": nombre
+          "text": nom
         }
        
        
