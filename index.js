@@ -101,10 +101,11 @@ try {
 }
 
 try {
-
-  if(req.body.entry[0].changes[0].value.messages[0].button.payload){
-   const payload = req.body.entry[0].changes[0].value.messages[0].button.payload
-    console.log('payload: '+nombre);
+  const payload = req.body.entry[0].changes[0].value.messages[0].button.payload
+  console.log('payload: '+payload);
+  if(payload){
+   
+   
 
     console.log("entra ------------------->")
     let data ={
