@@ -61,14 +61,14 @@ app.post('/facebook', function(req, res) {
   
   //console.log('Facebook request body: '+req.body);
   
-  console.log('PAYLOADS: '+payload);
+ 
 
 
   if (req.body.entry[0].changes[0].value.messages[0].text.body){
     const mensaje = req.body.entry[0].changes[0].value.messages[0].text.body
     const nombre = req.body.entry[0].changes[0].value.contacts[0].profile.name
     const numero = req.body.entry[0].changes[0].value.metadata.display_phone_number;
-
+    console.log('nombre: '+nombre);
     let data ={
       "messaging_product": "whatsapp",
       "preview_url": false,
@@ -97,7 +97,8 @@ app.post('/facebook', function(req, res) {
   }
 
   if(req.body.entry[0].changes[0].value.messages[0].button.payload){
-   
+   const payload = req.body.entry[0].changes[0].value.messages[0].button.payload
+    console.log('payload: '+nombre);
 
     console.log("entra ------------------->")
     let data ={
@@ -125,9 +126,7 @@ app.post('/facebook', function(req, res) {
     res.sendStatus(200);
   }
 
-    //console.log(numero)
-  //console.log(nombre)
-  //console.log(mensaje)
+ 
 
 
   if (!req.isXHubValid()) {
