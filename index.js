@@ -107,7 +107,7 @@ try {
  
     let nom = req.body.entry[0].changes[0].value.contacts[0].profile.name
     let num = req.body.entry[0].changes[0].value.contacts[0].input
-    let ruta= req.body.entry[0]
+    let ruta= req.body
     console.log(ruta+" entra ------------------->"+ nom +" selecciono "+payload)
     let data ={
       "messaging_product": "whatsapp",
