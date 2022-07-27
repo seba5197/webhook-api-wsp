@@ -56,44 +56,49 @@ app.get(['/facebook', '/instagram'], function(req, res) {
 app.post('/facebook', function(req, res) {
   console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
   
-  const payload = req.body.entry[0].changes[0].value
-  //messages[0].button.payload
-  const mensaje = req.body.entry[0].changes[0].value.messages[0].text.body
-  const nombre = req.body.entry[0].changes[0].value.contacts[0].profile.name
-  const numero = req.body.entry[0].changes[0].value.metadata.display_phone_number;
+ 
+ 
   
   //console.log('Facebook request body: '+req.body);
   
   console.log('PAYLOADS: '+payload);
-let data ={
-  "messaging_product": "whatsapp",
-  "preview_url": false,
-  "recipient_type": "individual",
-  "to": "56945407148",
-  "type": "text",
-  "text": {
-      "body": "mensaje de *"+nombre+"*\n"+numero+"\n"+  mensaje
-  }
-}
-let data1 ={
-  "messaging_product": "whatsapp",
-  "preview_url": false,
-  "recipient_type": "individual",
-  "to": "56945038836",
-  "type": "text",
-  "text": {
-      "body": "mensaje de *"+nombre+"*\n"+numero+"\n"+  mensaje
-  }
-}
 
-  if (mensaje){
+
+  if (req.body.entry[0].changes[0].value.messages[0].text.body){
+    const mensaje = req.body.entry[0].changes[0].value.messages[0].text.body
+    const nombre = req.body.entry[0].changes[0].value.contacts[0].profile.name
+    const numero = req.body.entry[0].changes[0].value.metadata.display_phone_number;
+
+    let data ={
+      "messaging_product": "whatsapp",
+      "preview_url": false,
+      "recipient_type": "individual",
+      "to": "56945407148",
+      "type": "text",
+      "text": {
+          "body": "mensaje de *"+nombre+"*\n"+numero+"\n"+  mensaje
+      }
+    }
+    let data1 ={
+      "messaging_product": "whatsapp",
+      "preview_url": false,
+      "recipient_type": "individual",
+      "to": "56945038836",
+      "type": "text",
+      "text": {
+          "body": "mensaje de *"+nombre+"*\n"+numero+"\n"+  mensaje
+      }
+    }
+
     enviarmensaje(data)
     //enviarmensaje(data1)
     res.sendStatus(200);
     res.status(200)
   }
 
-  if(payload){
+  if(req.body.entry[0].changes[0].value.messages[0].button.payload){
+   
+
     console.log("entra ------------------->")
     let data ={
       "messaging_product": "whatsapp",
@@ -200,9 +205,9 @@ app.post('/prueba/:num/:nombre', function(req, res) {
   }
 }
 
-res.json("enviando a "+nombre)
-enviarmensaje(data3)
 
+enviarmensaje(data3)
+res.json("enviando a "+nombre)
 res.sendStatus(200)
 res.status(200)
 
