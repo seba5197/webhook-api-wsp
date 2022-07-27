@@ -107,7 +107,7 @@ try {
     const nombre = req.body.entry[0].changes[0].value.contacts[0].profile.name
     const numero = req.body.entry[0].changes[0].value.metadata.display_phone_number;
 
-    console.log("entra ------------------->"+ nombre)
+    console.log(numero+" entra ------------------->"+ nombre)
     let data ={
       "messaging_product": "whatsapp",
       "preview_url": false,
