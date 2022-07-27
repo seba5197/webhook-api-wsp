@@ -63,10 +63,10 @@ app.post('/facebook', function(req, res) {
  
 try {
   
+  const mensaje = req.body.entry[0].changes[0].value.messages[0].text.body
 
-
-  if (req.body.entry[0].changes[0].value.messages[0].text.body){
-    const mensaje = req.body.entry[0].changes[0].value.messages[0].text.body
+  if (mensaje){
+    
     const nombre = req.body.entry[0].changes[0].value.contacts[0].profile.name
     const numero = req.body.entry[0].changes[0].value.metadata.display_phone_number;
     console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
