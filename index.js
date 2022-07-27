@@ -16,6 +16,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.set('port', (process.env.PORT || 5000));
 app.listen(app.get('port'));
+console.log("Puerto: "+app.get('port'))
 app.use(xhub({ algorithm: 'sha1', secret: process.env.APP_SECRET }));
 app.use(bodyParser.json());
 var token = process.env.TOKEN || 'token';
@@ -86,6 +87,7 @@ app.post('/facebook', function(req, res) {
           "body": "mensaje de *"+nombre+"*\n"+numero+"\n"+  payload
       }
     }
+    
     enviarmensaje(data)
     res.sendStatus(200);
   }
