@@ -110,6 +110,7 @@ try {
     let num = req.body.entry[0].changes[0].value.contacts[0].wa_id
     console.log("sssssssssssssss"+JSON.stringify(num))
     //console.log(ruta+" entra ------------------->"+ nom +" selecciono "+payload)
+    let bodytext = "Mensaje de *"+  nom +"* \n Numero: *"+num+ "* \n Whatasapps: *https://wa.me/"+num+ "* \n Seleccionó contacto vía: *"+ payload+"*"
     let data ={
       "messaging_product": "whatsapp",
       "preview_url": false,
@@ -117,7 +118,7 @@ try {
       "to": "56945407148",
       "type": "text",
       "text": {
-          "body": "mensaje de "+  nom +"\n Numero: "+num+ "\n Selecciono "+ payload 
+          "body": bodytext
       }
     }
     let data1 ={
@@ -127,7 +128,7 @@ try {
       "to": "56945038836",
       "type": "text",
       "text": {
-          "body": "mensaje de *"+nom+"*\n"+num+"\n"+  payload
+          "body": bodytext
       }
     }
     
