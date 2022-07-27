@@ -104,10 +104,10 @@ try {
   const payload = req.body.entry[0].changes[0].value.messages[0].button.payload
   console.log('payload: '+payload);
   if(payload){
-   
-   
+    const nombre = req.body.entry[0].changes[0].value.contacts[0].profile.name
+    const numero = req.body.entry[0].changes[0].value.metadata.display_phone_number;
 
-    console.log("entra ------------------->")
+    console.log("entra ------------------->"+ nombre)
     let data ={
       "messaging_product": "whatsapp",
       "preview_url": false,
