@@ -116,7 +116,7 @@ try {
       "to": "56945407148",
       "type": "text",
       "text": {
-          "body": "mensaje de "+  payload
+          "body": "mensaje de "+  nombre +" Numero: "+numero+ "\n Selecciono "+ payload 
       }
     }
     let data1 ={
