@@ -145,7 +145,7 @@ try {
 
 
 
-  console.log('request header X-Hub-Signature validated');
+  //console.log('request header X-Hub-Signature validated');
   // Process the Facebook updates here
   received_updates.unshift(req.body);
   res.sendStatus(200);
