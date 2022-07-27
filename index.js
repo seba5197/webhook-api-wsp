@@ -69,8 +69,8 @@ try {
     
     const nombre = req.body.entry[0].changes[0].value.contacts[0].profile.name
     const numero = req.body.entry[0].changes[0].value.metadata.display_phone_number;
-    console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
-    console.log('nombre: '+nombre);
+    //console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+    //console.log('nombre: '+nombre);
     let data ={
       "messaging_product": "whatsapp",
       "preview_url": false,
@@ -108,7 +108,7 @@ try {
 
     let nom = req.body.entry[0].changes[0].value.contacts[0].profile.name
     let num = req.body.entry[0].changes[0].value.contacts[0].wa_id
-    console.log("sssssssssssssss"+JSON.stringify(num))
+    //console.log("sssssssssssssss"+JSON.stringify(num))
     //console.log(ruta+" entra ------------------->"+ nom +" selecciono "+payload)
     let bodytext = "Mensaje de *"+  nom +"* \n Numero: *"+num+ "* \n Whatasapps: *https://wa.me/"+num+ "* \n Seleccionó contacto vía: *"+ payload+"*"
     let data ={
@@ -170,7 +170,7 @@ app.post('/prueba/:num/:nombre', function(req, res) {
 
  let num= req.params.num
  let nom= req.params.nombre
- console.log("envia mensaje a "+nom);
+ //console.log("envia mensaje a "+nom);
 
  let data3={
   "messaging_product": "whatsapp",
