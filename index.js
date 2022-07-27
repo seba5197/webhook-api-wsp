@@ -150,25 +150,21 @@ try {
 } catch (error) {
 }
 
- 
+//------------------------------------------
   
   
   
 });
 
-app.post('/instagram', function(req, res) {
+
+try {
   
-  console.log('Instagram request body:');
-  console.log(req.body);
-  // Process the Instagram updates here
-  received_updates.unshift(req.body);
-  res.status(200)
-  res.sendStatus(200);
-});
 
 app.post('/prueba/:num/:nombre', function(req, res) {
+
  let num= req.params.num
  let nombre= req.params.nombre
+ console.log("envia mensaje a "+nombre)
 
  let data3={
   "messaging_product": "whatsapp",
@@ -215,11 +211,15 @@ app.post('/prueba/:num/:nombre', function(req, res) {
 
 
 enviarmensaje(data3)
-res.json("enviando a "+nombre)
+
 res.sendStatus(200)
 res.status(200)
 
 })
+
+} catch (error) {
+  
+}
   
 
   
