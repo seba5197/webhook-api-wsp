@@ -132,6 +132,7 @@ try {
     
     enviarmensaje(data)
     res.sendStatus(200);
+    res.Status(200);
   }
 
   
