@@ -60,7 +60,7 @@ app.post('/facebook', function(req, res) {
   const mensaje = req.body.entry[0].changes[0].value.messages[0].text.body
   const nombre = req.body.entry[0].changes[0].value.contacts[0].profile.name
   const numero = req.body.entry[0].changes[0].value.metadata.display_phone_number;
-  console.log('Facebook request body: '+payload+" "+ numero);
+  console.log('Facebook request body: '+req.body);
 let data ={
   "messaging_product": "whatsapp",
   "preview_url": false,
