@@ -108,7 +108,7 @@ try {
     let nom = req.body.entry[0].changes[0].value.contacts[0].profile.name
     let num = req.body.entry[0].changes[0].value;
 
-    console.log(numero+" entra ------------------->"+ nombre +" selecciono "+payload)
+    console.log(num+" entra ------------------->"+ nom +" selecciono "+payload)
     let data ={
       "messaging_product": "whatsapp",
       "preview_url": false,
@@ -126,7 +126,7 @@ try {
       "to": "56945038836",
       "type": "text",
       "text": {
-          "body": "mensaje de *"+nombre+"*\n"+numero+"\n"+  payload
+          "body": "mensaje de *"+nom+"*\n"+num+"\n"+  payload
       }
     }
     
