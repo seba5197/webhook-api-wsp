@@ -62,6 +62,8 @@ app.post('/facebook', function(req, res) {
   //console.log('Facebook request body: '+req.body);
   
  
+try {
+  
 
 
   if (req.body.entry[0].changes[0].value.messages[0].text.body){
@@ -95,6 +97,11 @@ app.post('/facebook', function(req, res) {
     res.sendStatus(200);
     res.status(200)
   }
+} catch (error) {
+  console.log("no es mensaje")
+}
+
+try {
 
   if(req.body.entry[0].changes[0].value.messages[0].button.payload){
    const payload = req.body.entry[0].changes[0].value.messages[0].button.payload
@@ -126,7 +133,10 @@ app.post('/facebook', function(req, res) {
     res.sendStatus(200);
   }
 
- 
+   
+} catch (error) {
+  console.log("no es payload")
+}
 
 
   if (!req.isXHubValid()) {
