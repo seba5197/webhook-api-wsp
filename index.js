@@ -65,32 +65,7 @@ app.post('/facebook', function(req, res) {
   const nombre = req.body.entry[0].changes[0].value.contacts[0].profile.name
   const numero = req.body.entry[0].changes[0].value.metadata.display_phone_number;
 
-  if(payload=="Llamado" || payload=="Whatsapps"){
-    console.log("entra ------------------->")
-    let data ={
-      "messaging_product": "whatsapp",
-      "preview_url": false,
-      "recipient_type": "individual",
-      "to": "56945407148",
-      "type": "text",
-      "text": {
-          "body": "mensaje de "+  payload
-      }
-    }
-    let data1 ={
-      "messaging_product": "whatsapp",
-      "preview_url": false,
-      "recipient_type": "individual",
-      "to": "56945038836",
-      "type": "text",
-      "text": {
-          "body": "mensaje de *"+nombre+"*\n"+numero+"\n"+  payload
-      }
-    }
-    
-    enviarmensaje(data)
-    res.sendStatus(200);
-  }
+ 
  
 
 
@@ -121,6 +96,33 @@ let data1 ={
     enviarmensaje(data1)
     res.sendStatus(200);
     res.status(200)
+  }
+
+  if(payload=="Llamado" || payload=="Whatsapps"){
+    console.log("entra ------------------->")
+    let data ={
+      "messaging_product": "whatsapp",
+      "preview_url": false,
+      "recipient_type": "individual",
+      "to": "56945407148",
+      "type": "text",
+      "text": {
+          "body": "mensaje de "+  payload
+      }
+    }
+    let data1 ={
+      "messaging_product": "whatsapp",
+      "preview_url": false,
+      "recipient_type": "individual",
+      "to": "56945038836",
+      "type": "text",
+      "text": {
+          "body": "mensaje de *"+nombre+"*\n"+numero+"\n"+  payload
+      }
+    }
+    
+    enviarmensaje(data)
+    res.sendStatus(200);
   }
 
     //console.log(numero)
