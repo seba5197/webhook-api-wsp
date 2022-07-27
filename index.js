@@ -54,7 +54,6 @@ app.get(['/facebook', '/instagram'], function(req, res) {
 });
 
 app.post('/facebook', function(req, res) {
-  console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
   
  
  
@@ -70,6 +69,7 @@ try {
     const mensaje = req.body.entry[0].changes[0].value.messages[0].text.body
     const nombre = req.body.entry[0].changes[0].value.contacts[0].profile.name
     const numero = req.body.entry[0].changes[0].value.metadata.display_phone_number;
+    console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
     console.log('nombre: '+nombre);
     let data ={
       "messaging_product": "whatsapp",
@@ -98,7 +98,6 @@ try {
     res.status(200)
   }
 } catch (error) {
-  console.log("no es mensaje")
 }
 
 try {
@@ -135,7 +134,6 @@ try {
 
    
 } catch (error) {
-  console.log("no es payload")
 }
 
 
