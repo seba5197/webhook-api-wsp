@@ -104,12 +104,12 @@ try {
   const payload  = req.body.entry[0].changes[0].value.messages[0].button.payload
 
   if(payload){
-    res.send('<pre>' + JSON.stringify(received_updates, null, 2) +  '</pre>');
+  
 
     let nom = req.body.entry[0].changes[0].value.contacts[0].profile.name
     let num = req.body.entry[0].changes[0].value.contacts[0].input
-    let ruta= req.body
-    console.log(ruta+" entra ------------------->"+ nom +" selecciono "+payload)
+    console.log(JSON.stringify(req.body))
+    //console.log(ruta+" entra ------------------->"+ nom +" selecciono "+payload)
     let data ={
       "messaging_product": "whatsapp",
       "preview_url": false,
