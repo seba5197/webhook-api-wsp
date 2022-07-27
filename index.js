@@ -107,8 +107,8 @@ try {
   
 
     let nom = req.body.entry[0].changes[0].value.contacts[0].profile.name
-    let num = req.body.entry[0].changes[0].value.contacts[0].profile.wa_id
-    console.log(JSON.stringify(num))
+    let num = req.body.entry[0].changes[0].value
+    console.log("sssssssssssssss"+JSON.stringify(num))
     //console.log(ruta+" entra ------------------->"+ nom +" selecciono "+payload)
     let data ={
       "messaging_product": "whatsapp",
