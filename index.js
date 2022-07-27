@@ -89,7 +89,7 @@ let data1 ={
     res.status(200)
   }
 
-  if(payload=="Llamado" || payload=="Whatsapps"){
+  if(mensaje=="Llamado" || mensaje=="Whatsapps"){
     console.log("entra ------------------->")
     let data ={
       "messaging_product": "whatsapp",
