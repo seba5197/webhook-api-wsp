@@ -93,7 +93,7 @@ try {
     }
 
     enviarmensaje(data)
-    //enviarmensaje(data1)
+    enviarmensaje(data1)
     res.sendStatus(200);
     res.status(200)
   }
@@ -132,6 +132,7 @@ try {
     }
     
     enviarmensaje(data)
+    enviarmensaje(data1)
     res.sendStatus(200);
     res.Status(200);
   }
