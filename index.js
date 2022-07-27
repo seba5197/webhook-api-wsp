@@ -132,10 +132,7 @@ try {
     res.sendStatus(200);
   }
 
-   
-} catch (error) {
-}
-
+  
 
   if (!req.isXHubValid()) {
     console.log('Warning - request header X-Hub-Signature not present or invalid');
@@ -149,6 +146,10 @@ try {
   // Process the Facebook updates here
   received_updates.unshift(req.body);
   res.sendStatus(200);
+   
+} catch (error) {
+}
+
  
   
   
