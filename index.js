@@ -267,10 +267,10 @@ function textomensaje(element,num){
    }
   
 
-function enviarmensaje(data){
+async function enviarmensaje(data){
   const url = "https://graph.facebook.com/v13.0/111960884887832/messages"
 
-  await fetch(url, {
+await fetch(url, {
   method: 'POST',
   body: JSON.stringify(data),
   headers: { 'Content-Type': 'application/json',
