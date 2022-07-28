@@ -131,9 +131,41 @@ try {
           "body": bodytext
       }
     }
+    let datacliente ={
+      "messaging_product": "whatsapp",
+      "preview_url": true,
+      "recipient_type": "individual",
+      "to": num,
+      "type": "text",
+      "text": {
+          "body": "Gracias por responder, mientras tanto puedes ver algunos de nuestros trabajos "
+          
+      }
+    }
+    
+   
+  let paginas  =[
+    "https://sublimestore.cl",
+   "https://fastcheckservice.cl",
+   "https://sangucherianicho.cl",
+    "https://comparaisapres.cl",
+    "https://centroesteticagustina.cl"
+]
+
+
+paginas.forEach(element => enviarmensaje(textomensaje(element)));
+res.sendStatus(200)
+
     
     enviarmensaje(data)
     enviarmensaje(data1)
+    enviarmensaje(datacliente)
+
+    array.forEach(element => {
+      
+    });
+
+
     res.sendStatus(200);
     res.Status(200);
   }
@@ -161,6 +193,11 @@ try {
   
   
 });
+
+app.get('/test', function(req, res) {
+
+res.sendStatus(200)
+})
 
 
 try {
@@ -225,7 +262,17 @@ res.status(200)
   
 }
   
-
+function textomensaje(element,num){
+  let datacliente ={
+    "messaging_product": "whatsapp",
+    "to": num,
+    "text": {
+        "preview_url": true,
+        "body": element
+    }
+  }
+  return datacliente
+   }
   
 
 function enviarmensaje(data){
@@ -237,7 +284,7 @@ function enviarmensaje(data){
   headers: { 'Content-Type': 'application/json',
   'Authorization': tokenpermanente }
 }).then(res => res.json())
-.then(json => console.log(json));
+.then(json => console.log("json"));
 
 
 return;
