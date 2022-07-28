@@ -154,9 +154,22 @@ try {
    "https://sangucherianicho.cl",
    "https://centroesteticagustina.cl"
 ]
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function demo() {
+  for (let i = 0; i < 5; i++) {
+      console.log(`Waiting ${i} seconds...`);
+      await sleep(i * 1000);
+  }
+  console.log('Done');
+}
+
+demo();
 
 
-  paginas.forEach(element => enviarmensaje(textomensaje(element,num)));
+  paginas.forEach (element => enviarmensaje(textomensaje(element,num)));
 
     res.sendStatus(200);
     res.Status(200);
