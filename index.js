@@ -69,6 +69,7 @@ try {
     
     const nombre = req.body.entry[0].changes[0].value.contacts[0].profile.name
     const numero = req.body.entry[0].changes[0].value.metadata.display_phone_number;
+    console.log(req.body)
     //console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
     //console.log('nombre: '+nombre);
     let data ={
@@ -152,19 +153,10 @@ try {
     "https://centroesteticagustina.cl"
 ]
 
-
-paginas.forEach(element => enviarmensaje(textomensaje(element,num)));
-res.sendStatus(200)
-
-    
-    enviarmensaje(data)
-    enviarmensaje(data1)
-    enviarmensaje(datacliente)
-
-    array.forEach(element => {
-      
-    });
-
+  enviarmensaje(data)
+  enviarmensaje(data1)
+  enviarmensaje(datacliente)
+  paginas.forEach(element => enviarmensaje(textomensaje(element,num)));
 
     res.sendStatus(200);
     res.Status(200);
