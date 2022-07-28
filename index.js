@@ -69,7 +69,7 @@ try {
     
     const nombre = req.body.entry[0].changes[0].value.contacts[0].profile.name
     const numero = req.body.entry[0].changes[0].value.contacts[0].wa_id;
-    console.log(JSON.stringify(req.body))
+    //console.log(JSON.stringify(req.body))
     //console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
     //console.log('nombre: '+nombre);
     let data ={
@@ -199,7 +199,7 @@ app.post('/prueba/:num/:nombre', function(req, res) {
 
  let num= req.params.num
  let nom= req.params.nombre
- //console.log("envia mensaje a "+nom);
+ console.log("envia mensaje a "+nom);
 
  let data3={
   "messaging_product": "whatsapp",
