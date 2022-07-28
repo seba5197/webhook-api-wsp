@@ -143,19 +143,19 @@ try {
           
       }
     }
-    
+    enviarmensaje(data)
+    enviarmensaje(data1)
+    enviarmensaje(datacliente)
    
   let paginas  =[
-    "https://sublimestore.cl",
+   "https://comparaisapres.cl",
+   "https://sublimestore.cl",
    "https://fastcheckservice.cl",
    "https://sangucherianicho.cl",
-    "https://comparaisapres.cl",
-    "https://centroesteticagustina.cl"
+   "https://centroesteticagustina.cl"
 ]
 
-  enviarmensaje(data)
-  enviarmensaje(data1)
-  enviarmensaje(datacliente)
+
   paginas.forEach(element => enviarmensaje(textomensaje(element,num)));
 
     res.sendStatus(200);
@@ -270,7 +270,7 @@ function textomensaje(element,num){
 function enviarmensaje(data){
   const url = "https://graph.facebook.com/v13.0/111960884887832/messages"
 
-  fetch(url, {
+  await fetch(url, {
   method: 'POST',
   body: JSON.stringify(data),
   headers: { 'Content-Type': 'application/json',
