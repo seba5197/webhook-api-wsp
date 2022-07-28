@@ -153,7 +153,7 @@ try {
 ]
 
 
-paginas.forEach(element => enviarmensaje(textomensaje(element)));
+paginas.forEach(element => enviarmensaje(textomensaje(element,num)));
 res.sendStatus(200)
 
     
