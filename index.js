@@ -79,8 +79,11 @@ try {
       "to": "56945407148",
       "type": "text",
       "text": {
-          "body": "mensaje de *"+nombre+"*\n"+numero+"\n"+  mensaje
-      }
+        "body": "mensaje de *"+nombre+"*\n"+ 
+        "wa.me/"+numero+
+        "\n"+numero+
+        "\n"+  mensaje
+    }
     }
     let data1 ={
       "messaging_product": "whatsapp",
