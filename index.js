@@ -79,10 +79,10 @@ try {
       "to": "56945407148",
       "type": "text",
       "text": {
-        "body": "mensaje de *"+nombre+"*\n"+ 
+        "body": "Mensaje de *"+nombre+"*\n"+ 
         "wa.me/"+numero+
         "\n"+numero+
-        "\n"+  mensaje
+        "\n Mensaje: \n"+  mensaje
     }
     }
     let data1 ={
@@ -92,10 +92,10 @@ try {
       "to": "56945038836",
       "type": "text",
       "text": {
-          "body": "mensaje de *"+nombre+"*\n"+ 
+          "body": "Mensaje de *"+nombre+"*\n"+ 
           "wa.me/"+numero+
           "\n"+numero+
-          "\n"+  mensaje
+          "\n Mensaje: \n"+  mensaje
       }
     }
 
