@@ -72,7 +72,19 @@ try {
 
 
     if(mensaje.includes("hola")||mensaje.includes("Hola")){
-      console.log("HOLAAAAAAAAAAAAAAA")
+      let datacliente ={
+        "messaging_product": "whatsapp",
+        
+        "recipient_type": "individual",
+        "to": "56945407148",
+        "type": "text",
+        "text": {
+          "preview_url": true,
+          "body": "Hola *"+nombre+"*\n"+ 
+          "\n Gracias por ingresar a https://promarketing.cl \n Un asesor se contactará en breve contigo, mientras escribenos que servicio buscas"
+      }
+      }
+      enviarmensaje(datacliente)
 
     }
     //console.log(JSON.stringify(req.body))
