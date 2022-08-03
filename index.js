@@ -69,6 +69,12 @@ try {
     
     const nombre = req.body.entry[0].changes[0].value.contacts[0].profile.name
     const numero = req.body.entry[0].changes[0].value.contacts[0].wa_id;
+
+
+    if(mensaje.include("hola")||mensaje.include("Hola")){
+      console.log("HOLAAAAAAAAAAAAAAA")
+
+    }
     //console.log(JSON.stringify(req.body))
     //console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
     //console.log('nombre: '+nombre);
