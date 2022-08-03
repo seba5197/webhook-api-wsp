@@ -72,19 +72,50 @@ try {
 
 
     if(mensaje.includes("hola")||mensaje.includes("Hola")){
-      let datacliente ={
-        "messaging_product": "whatsapp",
-        
-        "recipient_type": "individual",
-        "to": "56945407148",
-        "type": "text",
-        "text": {
-          "preview_url": true,
-          "body": "Hola *"+nombre+"*\n"+ 
-          "\n Gracias por ingresar a https://promarketing.cl \n Un asesor se contactará en breve contigo, mientras escribenos que servicio buscas"
+   
+ let datacliente={
+  "messaging_product": "whatsapp",
+  "to": numero,
+  "type": "template",
+  "template": {
+    "language": {
+      "policy": "deterministic",
+      "code": "es"
+    },
+    "name": "saludo",
+    "components": [
+    {
+      "type" : "header",
+      "parameters": [
+  
+      {
+        "type": "video",
+        "video": {
+          "link": "https://promarketing.cl/video.mp4"
+          
+        }
       }
+    ]
+
+    },
+    {
+      "type" : "body",
+      "parameters": [
+        {
+          "type": "text",
+          "text": nombre
+        }
+       
+       
+      ] 
+    
       }
-      enviarmensaje(datacliente)
+    ]
+  }
+}
+
+
+enviarmensaje(datacliente)
 
     }
     //console.log(JSON.stringify(req.body))
