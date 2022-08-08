@@ -260,7 +260,7 @@ demo();
 app.post('/cliente/:num/:nombre/:mensaje/:correo', function(req, res) {
 try {
   
-
+console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
   let num= req.params.num
   let nom= req.params.nombre
   let correo= req.params.correo
