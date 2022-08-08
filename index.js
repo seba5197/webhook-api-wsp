@@ -54,9 +54,89 @@ app.get(['/facebook', '/instagram'], function(req, res) {
 });
 
 app.post('/facebook', function(req, res) {
-  
-  console.log("----"+JSON.stringify(req.body.entry[0]))
  
+  try {
+   //req.body.changes[0].value.messages[0].image.caption
+   //req.body.entry[0].changes[0].value.messages[0].image.id
+   
+   let caption = req.body.changes[0].value.messages[0].image.caption
+   let idimgcaption = req.body.changes[0].value.messages[0].image.id
+   
+
+    if(caption){
+   
+   let data=   {
+        "messaging_product": "whatsapp",
+        "recipient_type": "individual",
+        "to": "56945407148",
+        "type": "image",
+        "image": { 
+           "id": idimgcaption,
+          "caption":"cliente envio imagen con texto:\n"+ caption
+        }
+      }
+      let data2=   {
+        "messaging_product": "whatsapp",
+        "recipient_type": "individual",
+        "to": "56945038836",
+        "type": "image",
+        "image": { 
+           "id": idimgcaption,
+           "caption":"cliente envio imagen con texto:\n"+ caption
+        }
+      }
+
+
+      enviarmensaje(data)
+      enviarmensaje(data2)
+
+
+
+      res.sendStatus(200);
+      res.status(200);
+    }
+  } catch (error) {}
+
+
+  try {
+    let idimgsola  =req.body.entry[0].changes[0].value.messages[0].image.id
+
+if(idimgsola){
+  let data=   {
+    "messaging_product": "whatsapp",
+    "recipient_type": "individual",
+    "to": "56945407148",
+    "type": "image",
+    "image": { 
+       "id": idimgcaption,
+      "caption":"cliente envio imagen sin texto:\n"
+    }
+  }
+  let data2=   {
+    "messaging_product": "whatsapp",
+    "recipient_type": "individual",
+    "to": "56945038836",
+    "type": "image",
+    "image": { 
+       "id": idimgcaption,
+       "caption":"cliente envio imagen sin texto:\n"
+    }
+  }
+
+  enviarmensaje(data)
+  enviarmensaje(data2)
+  res.sendStatus(200);
+  res.status(200); 
+}
+
+
+  
+  } catch (error) {
+
+
+   
+  }
+
   
   //console.log('Facebook request body: '+req.body);
   
