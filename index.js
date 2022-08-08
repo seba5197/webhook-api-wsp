@@ -261,11 +261,11 @@ app.post('/cliente', function(req, res) {
 try {
   console.log("ingresa a cliente "+ JSON.stringify(req.body))
 console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
-  let num= req.body.numero
   let nom= req.body.nombre
+  let num= req.body.numero
   let correo= req.body.correo
   let mensaje= req.body.mensaje
-  console.log("nombre "+ nombre)
+  console.log("nombre "+ nom)
   console.log("correo "+ correo)
   console.log("tel "+ num)
   console.log("mensaje "+ mensaje)
