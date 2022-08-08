@@ -265,7 +265,12 @@ try {
   let nom= req.params.nombre
   let correo= req.params.correo
   let mensaje= req.params.mensaje
-  console.log("ingresa a cliente \n"+req.body)
+  console.log("nombre "+ nombre)
+  console.log("correo "+ correo)
+  console.log("tel "+ num)
+  console.log("mensaje "+ mensaje)
+  console.log("xxxxxxxxxxxxxxxxx")
+  console.log("ingresa a cliente \n"+ JSON.stringify(req.body))
   let bodytext = "Formulario de *"+  nom +
   "* \n Numero: *"+num+ 
   "* \n Whatasapps: *https://wa.me/"+num+ 
