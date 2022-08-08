@@ -55,7 +55,7 @@ app.get(['/facebook', '/instagram'], function(req, res) {
 
 app.post('/facebook', function(req, res) {
   
-  console.log("----"+JSON.stringify(req.body))
+  console.log("----"+JSON.stringify(req.body.entry[0]))
  
   
   //console.log('Facebook request body: '+req.body);
