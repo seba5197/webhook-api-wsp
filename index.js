@@ -257,14 +257,14 @@ demo();
   
 });
 
-app.post('/cliente/:num/:nombre/:mensaje/:correo', function(req, res) {
+app.post('/cliente', function(req, res) {
 try {
   console.log("ingresa a cliente "+ JSON.stringify(req.body))
 console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
-  let num= req.params.num
-  let nom= req.params.nombre
-  let correo= req.params.correo
-  let mensaje= req.params.mensaje
+  let num= req.body.numero
+  let nom= req.body.nombre
+  let correo= req.body.correo
+  let mensaje= req.body.mensaje
   console.log("nombre "+ nombre)
   console.log("correo "+ correo)
   console.log("tel "+ num)
