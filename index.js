@@ -257,8 +257,9 @@ demo();
   
 });
 
-app.post('/cliente', function(req, res) {
+app.post('/qaxxasdsadd', function(req, res) {
 try {
+  //envia formulario a wsp 
   //console.log("ingresa a cliente "+ JSON.stringify(req.body))
 console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
   let nom= req.body.nombre
@@ -270,33 +271,14 @@ console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
   let bodytext = "Formulario de *"+  nom +
   "* \n Numero: *"+num+ 
   "* \n Whatasapps: *https://wa.me/"+num+ 
-  "* \n Correo: *"+ correo+"*"+
+  "* \n Correo: *"+ correo+
   "* \n *Mensaje:* \n"+ mensaje
 
 
-  let data1 ={
-    "messaging_product": "whatsapp",
-    "preview_url": false,
-    "recipient_type": "individual",
-    "to": "56945038836",
-    "type": "text",
-    "text": {
-        "body": bodytext
-    }
-  }
-  let data2 ={
-    "messaging_product": "whatsapp",
-    "preview_url": false,
-    "recipient_type": "individual",
-    "to": "56945038836",
-    "type": "text",
-    "text": {
-        "body": bodytext
-    }
-  }
   
-  enviarmensaje(data1)
-  enviarmensaje(data2)
+  enviarmensaje(textomensaje(bodytext,"56945407148"))
+  enviarmensaje(textomensaje(bodytext,"56945038836"))
+ 
   
   res.sendStatus(200)
   res.status(200)
@@ -392,7 +374,7 @@ await fetch(url, {
   headers: { 'Content-Type': 'application/json',
   'Authorization': tokenpermanente }
 }).then(res => res.json())
-.then(json => console.log());
+.then(json => console.log("envia mensaje"));
 
 
 return;
