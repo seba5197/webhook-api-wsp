@@ -56,8 +56,7 @@ app.get(['/facebook', '/instagram'], function(req, res) {
 app.post('/facebook', function(req, res) {
  
   try {
-   //req.body.changes[0].value.messages[0].image.caption
-   //req.body.entry[0].changes[0].value.messages[0].image.id
+  
    
    let caption = req.body.changes[0].value.messages[0].image.caption
    let idimgcaption = req.body.changes[0].value.messages[0].image.id
