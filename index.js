@@ -55,7 +55,7 @@ app.get(['/facebook', '/instagram'], function(req, res) {
 
 app.post('/facebook', function(req, res) {
   
- 
+  console.log("----"+JSON.stringify(num))
  
   
   //console.log('Facebook request body: '+req.body);
