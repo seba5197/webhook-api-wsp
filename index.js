@@ -265,16 +265,12 @@ console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
   let num= req.body.numero
   let correo= req.body.correo
   let mensaje= req.body.mensaje
-  console.log("nombre "+ nom)
-  console.log("correo "+ correo)
-  console.log("tel "+ num)
-  console.log("mensaje "+ mensaje)
-  console.log()
+
   
   let bodytext = "Formulario de *"+  nom +
   "* \n Numero: *"+num+ 
   "* \n Whatasapps: *https://wa.me/"+num+ 
-  "* \n Correo: *"+ correo+"*"
+  "* \n Correo: *"+ correo+"*"+
   "* \n *Mensaje:* \n"+ mensaje
 
 
