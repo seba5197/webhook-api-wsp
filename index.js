@@ -60,7 +60,7 @@ app.post('/facebook', function(req, res) {
    
    let caption = req.body.changes[0].value.messages[0].image.caption
    let idimgcaption = req.body.changes[0].value.messages[0].image.id
-   
+   console.log(idimgcaption)
 
     if(caption){
    console.log("imagen caption")
