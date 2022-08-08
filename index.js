@@ -259,7 +259,7 @@ demo();
 
 app.post('/cliente', function(req, res) {
 try {
-  console.log("ingresa a cliente "+ JSON.stringify(req.body))
+  //console.log("ingresa a cliente "+ JSON.stringify(req.body))
 console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
   let nom= req.body.nombre
   let num= req.body.numero
@@ -392,7 +392,7 @@ await fetch(url, {
   headers: { 'Content-Type': 'application/json',
   'Authorization': tokenpermanente }
 }).then(res => res.json())
-.then(json => console.log("json"));
+.then(json => console.log());
 
 
 return;
