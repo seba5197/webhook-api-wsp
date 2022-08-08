@@ -101,14 +101,14 @@ app.post('/facebook', function(req, res) {
     let idimgsola  =req.body.entry[0].changes[0].value.messages[0].image.id
 
 if(idimgsola){
-  console.log("imagen sola")
+  
   let data=   {
     "messaging_product": "whatsapp",
     "recipient_type": "individual",
     "to": "56945407148",
     "type": "image",
     "image": { 
-       "id": idimgcaption,
+       "id": idimgsola,
       "caption":"cliente envio imagen sin texto:\n"
     }
   }
@@ -118,7 +118,7 @@ if(idimgsola){
     "to": "56945038836",
     "type": "image",
     "image": { 
-       "id": idimgcaption,
+       "id": idimgsola,
        "caption":"cliente envio imagen sin texto:\n"
     }
   }
