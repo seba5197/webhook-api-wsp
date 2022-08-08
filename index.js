@@ -259,7 +259,7 @@ demo();
 
 app.post('/cliente/:num/:nombre/:mensaje/:correo', function(req, res) {
 try {
-  
+  console.log("ingresa a cliente "+ JSON.stringify(req.body))
 console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
   let num= req.params.num
   let nom= req.params.nombre
@@ -270,7 +270,7 @@ console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
   console.log("tel "+ num)
   console.log("mensaje "+ mensaje)
   console.log()
-  console.log("ingresa a cliente "+ JSON.stringify(req.body))
+  
   let bodytext = "Formulario de *"+  nom +
   "* \n Numero: *"+num+ 
   "* \n Whatasapps: *https://wa.me/"+num+ 
