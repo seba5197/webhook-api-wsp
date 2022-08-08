@@ -269,8 +269,8 @@ try {
   console.log("correo "+ correo)
   console.log("tel "+ num)
   console.log("mensaje "+ mensaje)
-  console.log("xxxxxxxxxxxxxxxxx")
-  console.log("ingresa a cliente \n"+ JSON.stringify(req.body))
+  console.log()
+  console.log("ingresa a cliente "+ JSON.stringify(req.body))
   let bodytext = "Formulario de *"+  nom +
   "* \n Numero: *"+num+ 
   "* \n Whatasapps: *https://wa.me/"+num+ 
