@@ -257,9 +257,52 @@ demo();
   
 });
 
-app.get('/test', function(req, res) {
+app.post('/cliente/:num/:nombre/:mensaje/:correo', function(req, res) {
+try {
+  
 
-res.sendStatus(200)
+  let num= req.params.num
+  let nom= req.params.nombre
+  let correo= req.params.correo
+  let mensaje= req.params.mensaje
+  let bodytext = "Formulario de *"+  nom +
+  "* \n Numero: *"+num+ 
+  "* \n Whatasapps: *https://wa.me/"+num+ 
+  "* \n Correo: *"+ correo+"*"
+  "* \n *Mensaje:* \n"+ mensaje
+
+
+  let data1 ={
+    "messaging_product": "whatsapp",
+    "preview_url": false,
+    "recipient_type": "individual",
+    "to": "56945038836",
+    "type": "text",
+    "text": {
+        "body": bodytext
+    }
+  }
+  let data2 ={
+    "messaging_product": "whatsapp",
+    "preview_url": false,
+    "recipient_type": "individual",
+    "to": "56945038836",
+    "type": "text",
+    "text": {
+        "body": bodytext
+    }
+  }
+  
+  enviarmensaje(data1)
+  enviarmensaje(data2)
+  
+  res.sendStatus(200)
+  res.status(200)
+  
+  }
+  catch (error) {
+  
+}
 })
 
 
