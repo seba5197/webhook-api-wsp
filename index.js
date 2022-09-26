@@ -70,7 +70,7 @@ app.post('/facebook', function(req, res) {
         "to": "56945407148",
         "type": "image",
         "image": { 
-           "id": idimgcaption,
+          "id": idimgcaption,
           "caption":"cliente envio imagen con texto:\n"+ caption
         }
       }
