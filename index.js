@@ -55,7 +55,7 @@ app.get(['/facebook', '/instagram'], function(req, res) {
 });
 
 app.post('/facebook', function(req, res) {
-  console.log(req);
+  
   try {
   
    
@@ -136,7 +136,7 @@ if(idimgsola){
   }
 
   
-  //console.log('Facebook request body: '+req.body);
+console.log('Facebook request body: '+req.body);
   
  
 try {
@@ -287,8 +287,6 @@ try {
   let paginas  =[
    "https://comparaisapres.cl",
    "https://sublimestore.cl",
-   "https://fastcheckservice.cl",
-   "https://sangucherianicho.cl",
    "https://centroesteticagustina.cl"
 ]
 function sleep(ms) {
@@ -331,7 +329,7 @@ demo();
 }
 
 //------------------------------------------
-  
+
 res.sendStatus(400);
     res.status(400);  
   
