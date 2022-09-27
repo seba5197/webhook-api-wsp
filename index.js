@@ -41,7 +41,7 @@ app.get('/', function(req, res) {
 app.get(['/facebook', '/instagram'], function(req, res) {
 
 
-  console.log(req);
+  
   
   if (
     req.query['hub.mode'] == 'subscribe' &&
@@ -89,9 +89,6 @@ app.post('/facebook', function(req, res) {
 
       enviarmensaje(data)
       enviarmensaje(data2)
-
-
-
       res.sendStatus(200);
       res.status(200);
     }
@@ -335,7 +332,8 @@ demo();
 
 //------------------------------------------
   
-  
+res.sendStatus(400);
+    res.status(400);  
   
 });
 
