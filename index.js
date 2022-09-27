@@ -50,6 +50,7 @@ app.get(['/facebook', '/instagram'], function(req, res) {
     res.send(req.query['hub.challenge']);
   } else {
     res.sendStatus(400);
+    res.status(400);
   }
 });
 
