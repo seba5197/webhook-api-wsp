@@ -41,7 +41,7 @@ app.get('/', function(req, res) {
 app.get(['/facebook', '/instagram'], function(req, res) {
 
 
-
+  console.log(req);
   
   if (
     req.query['hub.mode'] == 'subscribe' &&
