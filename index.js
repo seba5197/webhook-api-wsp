@@ -26,6 +26,20 @@ var received_updates = [];
 const url = "https://graph.facebook.com/v13.0/111960884887832/messages"
 
 
+let date = new Date()
+hora = date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
+let day = date.getDate()
+let month = date.getMonth() + 1
+let year = date.getFullYear()
+let fecha ="" 
+if(month < 10){
+   fecha = (`${day}-0${month}-${year} *:* ${hora}`)
+  console.log(`${day}-0${month}-${year} *Hora:* ${hora} `)
+}else{
+   fecha = (`${day}-${month}-${year} *:* ${hora}`)
+  console.log(`${day}-${month}-${year} *Hora:* ${hora}`)
+}
+
 app.get('/', function(req, res) {
   //console.log(req);
   
@@ -75,20 +89,11 @@ app.post('/facebook', function(req, res) {
           "caption":"cliente envio imagen con texto:\n"+ caption
         }
       }
-      let data2=   {
-        "messaging_product": "whatsapp",
-        "recipient_type": "individual",
-        "to": "56945038836",
-        "type": "image",
-        "image": { 
-           "id": idimgcaption,
-           "caption":"cliente envio imagen con texto:\n"+ caption
-        }
-      }
+   
 
 
       enviarmensaje(data)
-      enviarmensaje(data2)
+
       res.sendStatus(200);
       res.status(200);
     }
@@ -110,19 +115,10 @@ if(idimgsola){
       "caption":"cliente envio imagen sin texto:\n"
     }
   }
-  let data2=   {
-    "messaging_product": "whatsapp",
-    "recipient_type": "individual",
-    "to": "56945038836",
-    "type": "image",
-    "image": { 
-       "id": idimgsola,
-       "caption":"cliente envio imagen sin texto:\n"
-    }
-  }
+
 
   enviarmensaje(data)
-  enviarmensaje(data2)
+
   res.sendStatus(200);
   res.status(200); 
 }
@@ -210,25 +206,14 @@ enviarmensaje(datacliente)
         "body": "Mensaje de *"+nombre+"*\n"+ 
         "wa.me/"+numero+
         "\n"+numero+
-        "\n Mensaje: \n"+  mensaje
+        "\n Mensaje: \n"+  mensaje + 
+        "\n *fecha:* "+  fecha 
     }
-    }
-    let data1 ={
-      "messaging_product": "whatsapp",
-      "preview_url": false,
-      "recipient_type": "individual",
-      "to": "56945038836",
-      "type": "text",
-      "text": {
-          "body": "Mensaje de *"+nombre+"*\n"+ 
-          "wa.me/"+numero+
-          "\n"+numero+
-          "\n Mensaje: \n"+  mensaje
-      }
     }
 
+
     enviarmensaje(data)
-    enviarmensaje(data1)
+  
     res.sendStatus(200);
     res.status(200)
   }
@@ -248,7 +233,8 @@ try {
     let bodytext = "Mensaje de *"+  nom +
     "* \n Numero: *"+num+ 
     "* \n Whatasapps: *https://wa.me/"+num+ 
-    "* \n Seleccionó contacto vía: *"+ payload+"*"
+    "* \n Seleccionó contacto vía: *"+ payload+"*"+ 
+    "\n *fecha:* "+  fecha 
     let data ={
       "messaging_product": "whatsapp",
       "preview_url": false,
@@ -259,16 +245,7 @@ try {
           "body": bodytext
       }
     }
-    let data1 ={
-      "messaging_product": "whatsapp",
-      "preview_url": false,
-      "recipient_type": "individual",
-      "to": "56945038836",
-      "type": "text",
-      "text": {
-          "body": bodytext
-      }
-    }
+    
     let datacliente ={
       "messaging_product": "whatsapp",
       "preview_url": true,
@@ -281,10 +258,11 @@ try {
       }
     }
     enviarmensaje(data)
-    enviarmensaje(data1)
+
     enviarmensaje(datacliente)
    
   let paginas  =[
+   "https://tierraketrawe.cl",
    "https://comparaisapres.cl",
    "https://sublimestore.cl",
    "https://centroesteticagustina.cl"
@@ -350,12 +328,12 @@ console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
   "* \n Numero: *"+num+ 
   "* \n Whatasapps: *https://wa.me/"+num+ 
   "* \n Correo: *"+ correo+
-  "* \n *Mensaje:* \n"+ mensaje
-
+  "* \n *Mensaje:* \n"+ mensaje + 
+  "\n *fecha:* \n"+  fecha 
 
   
   enviarmensaje(textomensaje(bodytext,"56945407148"))
-  enviarmensaje(textomensaje(bodytext,"56945038836"))
+  
  
   
   res.sendStatus(200)
