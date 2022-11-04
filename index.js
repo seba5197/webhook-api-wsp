@@ -27,17 +27,25 @@ const url = "https://graph.facebook.com/v13.0/111960884887832/messages"
 
 
 let date = new Date()
-hora = date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
+const formatFullTime = date.toLocaleTimeString("es-CL", {
+  timeZone: "America/Santiago",
+  hour12: true, // false
+  hour: "numeric", // 2-digit
+  minute: "2-digit", // numeric
+  second: "2-digit" // numeric
+});
+
+
 let day = date.getDate()
 let month = date.getMonth() + 1
 let year = date.getFullYear()
 let fecha ="" 
 if(month < 10){
-   fecha = (`${day}-0${month}-${year} *:* ${hora}`)
-  console.log(`${day}-0${month}-${year} *Hora:* ${hora} `)
+   fecha = (`${day}-0${month}-${year} *:* ${formatFullTime}`)
+  console.log(`${day}-0${month}-${year} *Hora:* ${formatFullTime} `)
 }else{
-   fecha = (`${day}-${month}-${year} *:* ${hora}`)
-  console.log(`${day}-${month}-${year} *Hora:* ${hora}`)
+   fecha = (`${day}-${month}-${year} *:* ${formatFullTime}`)
+  console.log(`${day}-${month}-${year} *Hora:* ${formatFullTime}`)
 }
 
 app.get('/', function(req, res) {
